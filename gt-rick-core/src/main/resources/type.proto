@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.github.cooker.core;
+
+//option java_package = "com.github.cooker.core";
+option java_outer_classname = "RickType";
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+enum messageType {
+    FILE = 0;
+    METHOD = 1;
+    LOG = 2;
+    UNKNOWN = 3;
+}

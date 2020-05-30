@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.github.cooker.core;
+
+//option java_package = "com.github.cooker.core";
+option java_outer_classname = "RickMessage";
+
+import "google/protobuf/timestamp.proto";
+import "type.proto";
+import "logMessage.proto";
+import "fileMessage.proto";
+import "methodMessage.proto";
+
+message msg {
+    //时间
+    google.protobuf.Timestamp timestamp = 1;
+    //请求序号
+    uint64 serialNo = 2;
+    string businessNo = 3;
+    //方法
+    string method = 4;
+    //客户端号
+    string clientId = 5;
+
+    map<string, string> params = 6;
+
+    uint32 router = 7;
+
+    messageType type = 8;
+
+    oneof body {
+        methodMessage methodBody = 9;
+        logMessage logBody = 10;
+        fileMessage fileBody = 11;
+    }
+}

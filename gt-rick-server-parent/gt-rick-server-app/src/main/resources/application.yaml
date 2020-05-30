@@ -1,0 +1,9 @@
+apollo:
+  bootstrap:
+    enabled: false
+spring:
+  redis:
+    host: gflish.xyz
+    port: 16378
+    password: a123/*-
+    database: 0

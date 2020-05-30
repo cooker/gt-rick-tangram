@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.github.cooker.core;
+
+option java_outer_classname = "RickMethodMessage";
+//import "google/protobuf/struct.proto";
+
+message methodMessage {
+
+    string type = 1;
+    string body = 2;
+}

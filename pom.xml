@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>gt-rick-dependencies</artifactId>
+    <groupId>com.github.cooker</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <!--    <relativePath>../pom.xml</relativePath>-->
+  </parent>
+
+  <artifactId>gt-rick-tangram</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>gt-rick-dependencies</module>
+    <module>gt-rick-jvm</module>
+    <module>gt-rick-common</module>
+    <module>gt-rick-core</module>
+    <module>gt-rick-server-parent</module>
+    <module>gt-rick-client-parent</module>
+    <module>gt-rick-client-parent/gt-rick-client-web</module>
+    <module>gt-rick-client-parent/gt-rick-client-app</module>
+    <module>gt-rick-server-parent/gt-rick-server-app</module>
+    <module>gt-rick-server-parent/gt-rick-server-web</module>
+  </modules>
+
+  <name>gt-rick-tangram</name>
+  <url>http://www.example.com</url>
+
+</project>

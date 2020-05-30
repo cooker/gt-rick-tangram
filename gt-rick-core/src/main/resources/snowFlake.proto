@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.github.cooker.core;
+
+option java_outer_classname = "SnowFlake";
+
+message SerialNo {
+
+    uint64 datacenterId=1;  //数据中心
+    uint64 machineId=2;     //机器标识
+    uint64 sequence = 3; //序列号
+    uint64 lastStmp = 4;//上一次时间戳
+}

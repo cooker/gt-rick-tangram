@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.github.cooker.core;
+
+option java_outer_classname = "RickFileMessage";
+
+message fileMessage {
+
+    string filename = 1;
+    string suffix = 2;
+    bytes datas = 3;
+}

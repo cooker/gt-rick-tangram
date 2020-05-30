@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.github.cooker.core;
+
+option java_outer_classname = "RickLogMessage";
+
+message logMessage {
+    //0 心跳
+    //1 日志
+    //2 异常日志
+    uint32 type = 1;
+    string msg = 2;
+}
