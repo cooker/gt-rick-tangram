@@ -17,5 +17,8 @@ public interface IContants {
     String QUEUE_CLIENT_SEND_ID = "queue:client:send:";
 
     //规则
-    String RULE = "rule:{clientId}:";
+    String RULE = "rule:{clientId}";
+
+    //授权
+    String ACCESS = "access:{clientId}";
 }

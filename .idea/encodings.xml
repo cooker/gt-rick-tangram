@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-jvm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-jvm/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-app/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

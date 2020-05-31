@@ -14,6 +14,7 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -30,11 +31,14 @@ import java.util.Iterator;
 @Slf4j
 @EnableAsync
 @SpringBootApplication
+//@EnableRabbit
+//@EnableKafka
 public class ServerApp {
     static NioEventLoopGroup workerGroup = null;
     static NioEventLoopGroup bossGroup = null;
     static ServerBootstrap bootstrap = null;
     static Configuration conf = null;
+    volatile static ConfigurableApplicationContext context=null;
 
     @PostConstruct
     public void init(){
@@ -67,7 +71,7 @@ public class ServerApp {
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
                 .childOption(ChannelOption.SO_REUSEADDR, true)
-                .childHandler(new ServerHandlerInitializer(ipFilterRule));
+                .childHandler(new ServerHandlerInitializer(this ,ipFilterRule));
         log.info("server start");
         this.start();
         return bootstrap;
@@ -111,7 +115,12 @@ public class ServerApp {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(ServerApp.class, args)
-                .registerShutdownHook();
+
+        context = SpringApplication.run(ServerApp.class, args);
+        context.registerShutdownHook();
+    }
+
+    public static ConfigurableApplicationContext getContext() {
+        return context;
     }
 }

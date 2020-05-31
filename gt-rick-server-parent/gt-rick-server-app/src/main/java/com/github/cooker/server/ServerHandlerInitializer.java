@@ -24,9 +24,11 @@ import java.net.InetSocketAddress;
 public class ServerHandlerInitializer extends ChannelInitializer {
 
     IpFilterRule ipFilterRule;
+    ServerApp serverApp;
 
-    public ServerHandlerInitializer(IpFilterRule ipFilterRule) {
+    public ServerHandlerInitializer(ServerApp serverApp, IpFilterRule ipFilterRule) {
         this.ipFilterRule = ipFilterRule;
+        this.serverApp = serverApp;
     }
 
 
@@ -42,6 +44,6 @@ public class ServerHandlerInitializer extends ChannelInitializer {
                 .addLast(new ProtobufDecoder(RickMessage.msg.getDefaultInstance()))
                 .addLast(new ProtobufVarint32LengthFieldPrepender())
                 .addLast(new ProtobufEncoder())
-                .addLast(new ServerHandler());
+                .addLast(new ServerHandler(this.serverApp));
     }
 }

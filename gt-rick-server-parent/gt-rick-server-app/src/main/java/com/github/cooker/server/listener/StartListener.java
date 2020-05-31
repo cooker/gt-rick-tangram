@@ -1,11 +1,15 @@
 package com.github.cooker.server.listener;
 
+import com.github.cooker.core.RickMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.context.ApplicationListener;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.context.event.EventListener;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
+import org.springframework.util.concurrent.ListenableFutureCallback;
 
 /**
  * grant
@@ -13,15 +17,20 @@ import org.springframework.stereotype.Component;
  * 描述：
  */
 @Slf4j
-@Component
+//@Component
 public class StartListener implements ApplicationListener<ApplicationStartedEvent> {
 
+//    @Autowired
+//    StringRedisTemplate redisTemplate;
     @Autowired
-    StringRedisTemplate redisTemplate;
+    KafkaTemplate<String, RickMessage.msg> kafkaTemplate;
 
     @Override
     public void onApplicationEvent(ApplicationStartedEvent event) {
-//        log.info(">>>>");
-//        redisTemplate.opsForHash().put("a", "ssss", "s");
+        RickMessage.msg msg = RickMessage.msg.newBuilder()
+                .setBusinessNo("sasadas")
+                .setClientId("123456")
+                .build();
+        kafkaTemplate.send("aaa", msg);
     }
 }
