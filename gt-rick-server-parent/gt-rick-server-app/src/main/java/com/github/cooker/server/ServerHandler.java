@@ -3,6 +3,7 @@ package com.github.cooker.server;
 import com.github.cooker.core.RickMessage;
 import com.github.cooker.core.utils.MethodContants;
 import com.github.cooker.server.dq.ChannelManager;
+import com.github.cooker.server.handler.HeartChannelBindHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
@@ -30,17 +31,18 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 //            ctx.fireChannelRead() 消息下发
             RickMessage.msg rickMessage = (RickMessage.msg) msg;
             if (StringUtils.isEmpty(rickMessage.getClientId())) {
-                log.info("clientId 为空直接丢弃");
-            } else if (MethodContants.HEART.equals(rickMessage.getMethod()) && rickMessage.getRouter() == 0){
-                log.info("收到初始化心跳>>>>>>>>>>>>{}", rickMessage.getClientId());
-                API.Try(()->
-                    ServerApp.getContext().getBean(ChannelManager.class).addChannel(rickMessage.getClientId(), ctx.channel())
-                ).onFailure((e)->{
-                   log.error("spring 容器获取 channelManager 失败", e);
-                }).get();
-                //权限判断
+                log.warn("clientId 为空直接丢弃 >>> {}", ctx.channel());
+            } else if (MethodContants.HEART.equals(rickMessage.getMethod())){
+                if (rickMessage.getRouter() == 0){
+                    //初始化心跳
+                    new HeartChannelBindHandler().channelRead(ctx, msg);
+                }
+            }else if (MethodContants.EXCEPTION.equals(rickMessage.getMethod())){
+                //服务异常
+            }else if (MethodContants.UPLOAD_LOG.equals(rickMessage.getMethod())){
+                //日志上传
             }else {
-
+                //正常消息
             }
         } finally {
             ReferenceCountUtil.release(msg);

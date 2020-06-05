@@ -1,7 +1,6 @@
 package com.github.cooker.client.listener;
 
-import com.github.cooker.client.ClientApp;
-import io.netty.channel.Channel;
+import com.github.cooker.client.RickStater;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.EventLoop;
@@ -14,9 +13,9 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class ChannelCloseListener implements ChannelFutureListener {
-    ClientApp clientApp;
+    RickStater clientApp;
 
-    public ChannelCloseListener(ClientApp app){
+    public ChannelCloseListener(RickStater app){
         this.clientApp = app;
     }
 

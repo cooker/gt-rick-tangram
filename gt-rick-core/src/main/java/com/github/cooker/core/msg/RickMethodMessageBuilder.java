@@ -6,4 +6,5 @@ package com.github.cooker.core.msg;
  * 描述：
  */
 public class RickMethodMessageBuilder {
+
 }

@@ -11,10 +11,10 @@ import org.springframework.context.event.ContextStoppedEvent;
  * 描述：
  */
 @Slf4j
-public class StopClientListener implements ApplicationListener<ContextStoppedEvent> {
+public class StoppedClientListener implements ApplicationListener<ContextStoppedEvent> {
     ClientApp clientApp;
 
-    public StopClientListener(ClientApp clientApp) {
+    public StoppedClientListener(ClientApp clientApp) {
         this.clientApp = clientApp;
     }
 

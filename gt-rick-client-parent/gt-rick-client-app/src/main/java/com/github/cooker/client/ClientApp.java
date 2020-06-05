@@ -2,7 +2,10 @@ package com.github.cooker.client;
 
 import com.github.cooker.client.handler.RetryConnectHandler;
 import com.github.cooker.client.listener.ChannelCloseListener;
+import com.github.cooker.client.listener.StartedClientListener;
+import com.github.cooker.client.listener.StoppedClientListener;
 import com.github.cooker.core.RickMessage;
+import com.github.cooker.core.utils.MethodContants;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
@@ -23,6 +26,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 import javax.annotation.PostConstruct;
 import java.nio.file.Paths;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /**
  * grant
@@ -33,13 +38,14 @@ import java.nio.file.Paths;
 @EnableAsync
 //@EnableRabbit
 @SpringBootApplication
-public class ClientApp {
+public class ClientApp implements RickClient, RickStater{
 
     volatile boolean state = true;
     volatile Channel channel;
     PropertiesConfiguration conf;
     EventLoopGroup group;
     Bootstrap bootstrap;
+    static volatile ClientApp self = null;
 
     public boolean isState() {
         return state;
@@ -53,7 +59,7 @@ public class ClientApp {
         return bootstrap;
     }
 
-    public Channel getChannel() {
+    protected Channel getChannel() {
         return channel;
     }
 
@@ -72,11 +78,14 @@ public class ClientApp {
     public boolean sendMessage(RickMessage.msg msg){
         Channel ch = this.channel;
         if (ch != null && ch.isWritable()) {
-            log.warn("sendOK message method={} serialNo={} businessNo={}", msg.getMethod(), msg.getSerialNo(), msg.getBusinessNo());
+            if (!MethodContants.HEART.equals(msg.getMethod())){
+                //打印非心跳消息
+                log.info("sendOK message method={} serialNo={} businessNo={}", msg.getMethod(), msg.getSerialNo(), msg.getBusinessNo());
+            }
             ch.writeAndFlush(msg);
             return true;
         }else {
-            log.warn("sendERR message method={} serialNo={} businessNo={}", msg.getMethod(), msg.getSerialNo(), msg.getBusinessNo());
+            log.error("sendERR message method={} serialNo={} businessNo={}", msg.getMethod(), msg.getSerialNo(), msg.getBusinessNo());
             return false;
         }
     }
@@ -84,6 +93,7 @@ public class ClientApp {
     @PostConstruct
     public void init() throws ConfigurationException {
         log.info("客户端初始化");
+        self = this;
         conf = new PropertiesConfiguration(Paths.get("conf.properties").toFile());
         group = new NioEventLoopGroup(conf.getInt("thread.worker"));
         bootstrap = new Bootstrap();
@@ -110,7 +120,6 @@ public class ClientApp {
                 });
     }
 
-
     @Bean
     public Bootstrap bootstrap(){
         this.start();
@@ -133,5 +142,24 @@ public class ClientApp {
 
     public static void main(String[] args) throws ConfigurationException {
         SpringApplication.run(ClientApp.class, args).registerShutdownHook();
+    }
+
+    public static ClientApp getSelf() {
+        return self;
+    }
+
+    @Bean
+    public StartedClientListener startedClientListener(){
+        return new StartedClientListener(this);
+    }
+
+    @Bean
+    public StoppedClientListener stoppedClientListener(){
+        return new StoppedClientListener(this);
+    }
+
+    @Bean
+    public Executor executor(){
+        return Executors.newFixedThreadPool(16);
     }
 }

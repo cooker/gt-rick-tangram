@@ -8,6 +8,7 @@ message logMessage {
     //0 心跳
     //1 日志
     //2 异常日志
+    //3 回执
     uint32 type = 1;
     string msg = 2;
 }

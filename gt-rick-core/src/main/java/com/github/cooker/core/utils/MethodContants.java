@@ -12,4 +12,6 @@ public interface MethodContants {
     String HEART = "heart.log";
     //报警
     String EXCEPTION = "exception.log";
+    //回执
+    String RECEIPT = "receipt.log";
 }

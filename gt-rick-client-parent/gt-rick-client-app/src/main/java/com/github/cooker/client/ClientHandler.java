@@ -1,7 +1,8 @@
 package com.github.cooker.client;
 
 import com.github.cooker.core.RickMessage;
-import com.github.cooker.core.utils.MethodContants;
+import com.github.cooker.core.msg.RickHeartLogMessageBuilder;
+import com.github.cooker.core.msg.RickLogMessageBuilder;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -20,10 +21,9 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
-        RickMessage.msg msg = RickMessage.msg.newBuilder()
-                .setClientId("123456")
-                .setMethod(MethodContants.HEART)
-                .setRouter(0)
+        RickMessage.msg msg = RickLogMessageBuilder.newBuilderWithHeartLog()
+                .create0("123456")
+                .msg(RickHeartLogMessageBuilder.NOP)
                 .build();
         ctx.channel().writeAndFlush(msg);
     }

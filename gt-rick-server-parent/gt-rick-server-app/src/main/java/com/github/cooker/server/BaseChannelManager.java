@@ -31,6 +31,8 @@ public class BaseChannelManager implements ChannelManager {
     ReadWriteLock lock = new ReentrantReadWriteLock();
     @Override
     public boolean addChannel(String clientId, Channel channel) {
+        //防止批量重复操作
+        if (channels.containsKey(clientId)) return true;
         log.debug("clientId={} channel 新增 {}", clientId, channel);
         try {
             lock.writeLock().lock();

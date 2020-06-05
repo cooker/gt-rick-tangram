@@ -1,6 +1,6 @@
 package com.github.cooker.client.handler;
 
-import com.github.cooker.client.ClientApp;
+import com.github.cooker.client.RickStater;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.EventLoop;
@@ -14,9 +14,9 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class RetryConnectHandler extends ChannelInboundHandlerAdapter {
 
-    private  ClientApp clientApp;
+    private RickStater clientApp;
 
-    public RetryConnectHandler(ClientApp clientApp) {
+    public RetryConnectHandler(RickStater clientApp) {
         this.clientApp = clientApp;
     }
 
