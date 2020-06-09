@@ -19,10 +19,10 @@
     <module>gt-rick-core</module>
     <module>gt-rick-server-parent</module>
     <module>gt-rick-client-parent</module>
-    <module>gt-rick-client-parent/gt-rick-client-web</module>
+<!--    <module>gt-rick-client-parent/gt-rick-client-web</module>-->
     <module>gt-rick-client-parent/gt-rick-client-app</module>
     <module>gt-rick-server-parent/gt-rick-server-app</module>
-    <module>gt-rick-server-parent/gt-rick-server-web</module>
+<!--    <module>gt-rick-server-parent/gt-rick-server-web</module>-->
   </modules>
 
   <name>gt-rick-tangram</name>
