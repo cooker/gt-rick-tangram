@@ -1,7 +1,6 @@
 package com.github.cooker.server;
 
 import com.github.cooker.core.RickMessage;
-import com.github.cooker.server.dq.BlackIpFilterRule;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.codec.protobuf.ProtobufDecoder;
@@ -9,11 +8,8 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import io.netty.handler.ipfilter.IpFilterRule;
-import io.netty.handler.ipfilter.IpFilterRuleType;
 import io.netty.handler.ipfilter.RuleBasedIpFilter;
 import lombok.extern.slf4j.Slf4j;
-
-import java.net.InetSocketAddress;
 
 /**
  * grant

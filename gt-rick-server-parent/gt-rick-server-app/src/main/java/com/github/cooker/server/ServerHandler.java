@@ -2,7 +2,7 @@ package com.github.cooker.server;
 
 import com.github.cooker.core.RickMessage;
 import com.github.cooker.core.utils.MethodContants;
-import com.github.cooker.server.dq.ChannelManager;
+import com.github.cooker.server.common.ChannelManager;
 import com.github.cooker.server.handler.HeartChannelBindHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

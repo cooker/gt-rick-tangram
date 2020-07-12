@@ -4,14 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-app/gt-rick-client-app.iml" filepath="$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-app/gt-rick-client-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-parent.iml" filepath="$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-web/gt-rick-client-web.iml" filepath="$PROJECT_DIR$/gt-rick-client-parent/gt-rick-client-web/gt-rick-client-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-common/gt-rick-common.iml" filepath="$PROJECT_DIR$/gt-rick-common/gt-rick-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-core/gt-rick-core.iml" filepath="$PROJECT_DIR$/gt-rick-core/gt-rick-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-dependencies/gt-rick-dependencies.iml" filepath="$PROJECT_DIR$/gt-rick-dependencies/gt-rick-dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-jvm/gt-rick-jvm.iml" filepath="$PROJECT_DIR$/gt-rick-jvm/gt-rick-jvm.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-app/gt-rick-server-app.iml" filepath="$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-app/gt-rick-server-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-parent.iml" filepath="$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-web/gt-rick-server-web.iml" filepath="$PROJECT_DIR$/gt-rick-server-parent/gt-rick-server-web/gt-rick-server-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/gt-rick-tangram.iml" filepath="$PROJECT_DIR$/gt-rick-tangram.iml" />
     </modules>
   </component>

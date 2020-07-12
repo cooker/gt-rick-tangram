@@ -1,6 +1,6 @@
 package com.github.cooker.server;
 
-import com.github.cooker.server.dq.BlackIpFilterRule;
+import com.github.cooker.server.common.BlackIpFilterRule;
 import com.github.cooker.server.listener.StopServerListener;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;

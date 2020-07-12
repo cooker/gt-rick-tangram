@@ -46,6 +46,11 @@
       <artifactId>zookeeper</artifactId>
       <version>3.6.1</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-client</artifactId>
+    </dependency>
   </dependencies>
 
 </project>

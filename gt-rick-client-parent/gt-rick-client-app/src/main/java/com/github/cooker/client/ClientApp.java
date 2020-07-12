@@ -18,6 +18,7 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -37,6 +38,7 @@ import java.util.concurrent.Executors;
 @Slf4j
 @EnableAsync
 //@EnableRabbit
+@MapperScan("com.github.cooker.client.web.dao")
 @SpringBootApplication
 public class ClientApp implements RickClient, RickStater{
 

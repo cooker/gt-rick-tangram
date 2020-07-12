@@ -2,7 +2,7 @@ package com.github.cooker.server.handler;
 
 import com.github.cooker.core.RickMessage;
 import com.github.cooker.server.ServerApp;
-import com.github.cooker.server.dq.ChannelManager;
+import com.github.cooker.server.common.ChannelManager;
 import io.netty.channel.ChannelHandlerContext;
 import io.vavr.API;
 import lombok.extern.slf4j.Slf4j;

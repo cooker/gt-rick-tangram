@@ -1,8 +1,8 @@
 package com.github.cooker.server;
 
-import com.github.cooker.server.dq.ChannelManager;
+import com.github.cooker.server.common.ChannelManager;
 
-import com.github.cooker.server.dq.CommonUtils;
+import com.github.cooker.server.common.CommonUtils;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
