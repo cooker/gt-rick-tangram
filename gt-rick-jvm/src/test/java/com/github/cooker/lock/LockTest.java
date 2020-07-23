@@ -2,6 +2,8 @@ package com.github.cooker.lock;
 
 import org.junit.Test;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.concurrent.locks.StampedLock;
 
 /**
@@ -17,6 +19,6 @@ public class LockTest {
 
     @Test
     public void readLock(){
-
+        Executor executor = Executors.newCachedThreadPool();
     }
 }

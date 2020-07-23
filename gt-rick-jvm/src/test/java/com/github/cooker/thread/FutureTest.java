@@ -84,10 +84,5 @@ public class FutureTest {
         System.out.println(target.isDone());
         System.out.println(target.isCancelled());
     }
-    
-    @Test
-    public void km(){
-
-    }
 
 }

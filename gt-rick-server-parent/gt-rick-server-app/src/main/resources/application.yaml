@@ -40,7 +40,3 @@ spring:
       max-poll-records: 10
     listener:
       ack-mode: MANUAL
-server:
-  kafka:
-    id: aaa
-    topic: aaa

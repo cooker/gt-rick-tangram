@@ -2,8 +2,7 @@ package com.github.cooker.thread;
 
 import org.junit.Test;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 /**
  * grant
@@ -12,8 +11,10 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public class PoolTest {
 
+    Executor executor = Executors.newCachedThreadPool();
+
     @Test
-    public void fixed(){
-        
+    public void fixed() throws InterruptedException {
+
     }
 }

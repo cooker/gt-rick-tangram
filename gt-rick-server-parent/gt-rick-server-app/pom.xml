@@ -54,26 +54,30 @@
       <artifactId>protobuf-java</artifactId>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.redisson/redisson-spring-boot-starter -->
     <dependency>
-      <groupId>redis.clients</groupId>
-      <artifactId>jedis</artifactId>
-      <version>3.1.0</version>
+      <groupId>org.redisson</groupId>
+      <artifactId>redisson-spring-boot-starter</artifactId>
+      <version>3.13.2</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>3.6.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.rocketmq</groupId>
+      <artifactId>rocketmq-spring-boot-starter</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+
     <dependency>
       <groupId>io.vavr</groupId>
       <artifactId>vavr</artifactId>
       <version>0.10.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
-      <version>2.2.7.RELEASE</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>lettuce-core</artifactId>
-          <groupId>io.lettuce</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
 
     <dependency>

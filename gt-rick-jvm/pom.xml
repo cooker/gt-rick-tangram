@@ -51,6 +51,14 @@
       <groupId>org.apache.activemq</groupId>
       <artifactId>activemq-client</artifactId>
     </dependency>
+
+  <!-- 对象大小 -->
+  <dependency>
+    <groupId>org.openjdk.jol</groupId>
+    <artifactId>jol-core</artifactId>
+    <version>0.11</version>
+  </dependency>
+
   </dependencies>
 
 </project>
