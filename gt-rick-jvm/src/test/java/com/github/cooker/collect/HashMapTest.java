@@ -2,8 +2,7 @@ package com.github.cooker.collect;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * grant
@@ -14,9 +13,12 @@ public class HashMapTest {
     
     @Test
     public void map(){
-        Map<String, String> map = new HashMap<>();
-        for (int i = 0; i < 30; i++) {
-            map.put("key" + i, i + "");
+        HashMap<String, String> map = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            String xx = map.put("key", i + "");
+            if (xx != null){
+                System.out.println(i);
+            }
         }
     }
 

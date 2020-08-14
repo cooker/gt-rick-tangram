@@ -7,7 +7,17 @@ package com.github.cooker.thread;
  */
 public class AQSTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        for (int i = 0; i < 1000000; i++) {
+            Thread.sleep(1000L);
 
+            say(i+"");
+        }
+
+    }
+
+
+    public static void say(String ss){
+        System.out.println(ss);
     }
 }

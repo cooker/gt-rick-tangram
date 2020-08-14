@@ -26,4 +26,9 @@
       <module name="gt-rick-tangram" target="1.8" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gt-rick-jvm" options="-bootclasspath /Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar" />
+    </option>
+  </component>
 </project>

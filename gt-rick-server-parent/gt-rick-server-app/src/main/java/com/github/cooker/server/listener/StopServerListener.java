@@ -4,6 +4,7 @@ import com.github.cooker.server.ServerApp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextStoppedEvent;
+import org.springframework.stereotype.Service;
 
 /**
  * grant
@@ -11,6 +12,7 @@ import org.springframework.context.event.ContextStoppedEvent;
  * 描述：
  */
 @Slf4j
+@Service
 public class StopServerListener implements ApplicationListener<ContextStoppedEvent> {
 
     @Override

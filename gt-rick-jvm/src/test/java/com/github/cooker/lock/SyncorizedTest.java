@@ -19,7 +19,7 @@ public class SyncorizedTest {
     public void sync() throws InterruptedException {
         Runnable run = ()->{
             while (isRun){
-//                synchronized (obj){}
+                synchronized (obj){}
             }
             System.out.println("stop");
         };

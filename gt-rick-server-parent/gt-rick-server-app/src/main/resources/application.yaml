@@ -3,9 +3,9 @@ apollo:
     enabled: false
 spring:
   redis:
-    host: gflish.xyz
-    port: 16378
-    password: grandR3e1ds
+    host: 127.0.0.1
+    port: 6378
+    password: 123456
     database: 0
   kafka:
     bootstrap-servers: gflish.xyz:9092
@@ -19,7 +19,7 @@ spring:
       # 键的序列化方式
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       # 值的序列化方式
-      value-serializer: com.github.cooker.server.dq.ProtobufSerializer
+      value-serializer: com.github.cooker.server.common.ProtobufSerializer
       # acks=0 ： 生产者在成功写入消息之前不会等待任何来自服务器的响应。
       # acks=1 ： 只要集群的首领节点收到消息，生产者就会收到一个来自服务器成功响应。
       # acks=all ：只有当所有参与复制的节点全部收到消息时，生产者才会收到一个来自服务器的成功响应。
@@ -36,7 +36,7 @@ spring:
       # 键的反序列化方式
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       # 值的反序列化方式
-      value-deserializer: com.github.cooker.server.dq.ProtobufDeserializer
+      value-deserializer: com.github.cooker.server.common.ProtobufDeserializer
       max-poll-records: 10
     listener:
       ack-mode: MANUAL

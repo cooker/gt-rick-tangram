@@ -16,8 +16,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.nio.file.Paths;
@@ -96,6 +98,11 @@ public class ServerApp {
                 future.channel().closeFuture();
             }
         }
+    }
+
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate(new HttpComponentsClientHttpRequestFactory());
     }
 
     public static NioEventLoopGroup getWorkerGroup() {
