@@ -212,7 +212,7 @@
     <thymeleaf-layout-dialect.version>2.4.1</thymeleaf-layout-dialect.version>
     <tomcat.version>9.0.34</tomcat.version>
     <unboundid-ldapsdk.version>4.0.14</unboundid-ldapsdk.version>
-    <undertow.version>2.0.30.Final</undertow.version>
+    <undertow.version>2.2.11.Final</undertow.version>
     <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     <webjars-hal-browser.version>3325375</webjars-hal-browser.version>
     <webjars-locator-core.version>0.41</webjars-locator-core.version>
